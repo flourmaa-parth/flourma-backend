@@ -12,6 +12,13 @@ import uuid
 from datetime import datetime, timezone, timedelta
 import bcrypt
 import jwt
+from fastapi_admin.app import app as admin_app
+from fastapi_admin.providers.login import UsernamePasswordProvider
+# Admin login setup (username: admin, password: admin123)
+login_provider = UsernamePasswordProvider(
+    username="admin",
+    password="admin123"
+)
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -519,6 +526,16 @@ async def update_rda(rda_update: RDAUpdate, email: str = Depends(verify_token)):
 
 # Include router
 app.include_router(api_router)
+# Mount admin dashboard at /admin
+app.mount("/admin", admin_app)
+# Tell admin about your data models
+admin_app.resources = [
+    AdminUser,
+    SKU,
+    Supplement,
+    Order,
+    RDAValues
+]
 
 app.add_middleware(
     CORSMiddleware,
