@@ -13,7 +13,7 @@ from datetime import datetime, timezone, timedelta
 import bcrypt
 import jwt
 from crudadmin import CRUDAdmin
-from fastcrud.mongodb import MongoAsyncModel
+from crudadmin.models import MongoAsyncModel
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
