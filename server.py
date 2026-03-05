@@ -522,28 +522,14 @@ async def update_rda(rda_update: RDAUpdate, email: str = Depends(verify_token)):
 app.include_router(api_router)
 # ============ Admin Dashboard ============
 
-#admin = CRUDAdmin(
-    session=db,
-    login_required=False
-)
-
-#admin.add_view(
-    model=MongoAsyncModel("orders", db.orders),
-    title="Orders"
-)
-
-#admin.add_view(
-    model=MongoAsyncModel("skus", db.skus),
-    title="SKUs"
-)
-
-#admin.add_view(
-    model=MongoAsyncModel("supplements", db.supplements),
-    title="Supplements"
-)
-
-# mount admin dashboard
-#app.mount("/admin", admin.app)
+"""
+TEMPORARILY DISABLED - Admin dashboard (fastcrud compatibility issue)
+admin = CRUDAdmin(session=db, login_required=False)
+admin.add_view(model=MongoAsyncModel(orders, db.orders), title="Orders")
+admin.add_view(model=MongoAsyncModel(skus, db.skus), title="SKUs")
+admin.add_view(model=MongoAsyncModel(supplements, db.supplements), title="Supplements")
+app.mount("/admin", admin.app)
+"""
 
 app.add_middleware(
     CORSMiddleware,
