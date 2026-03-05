@@ -15,12 +15,6 @@ import jwt
 from crudadmin import CRUDAdmin
 from fastcrud.mongodb import MongoAsyncModel
 
-# Admin login setup (username: admin, password: admin123)
-login_provider = UsernamePasswordProvider(
-    username="admin",
-    password="admin123"
-)
-
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
@@ -527,39 +521,30 @@ async def update_rda(rda_update: RDAUpdate, email: str = Depends(verify_token)):
 
 # Include router
 app.include_router(api_router)
-# Simple admin dashboard
+# ============ Admin Dashboard ============
+
 admin = CRUDAdmin(
-    session=db,  # your existing Motor db
-    login_required=False  # for Day 1; add login later
+    session=db,
+    login_required=False
 )
 
-# Add your models
 admin.add_view(
     model=MongoAsyncModel("orders", db.orders),
     title="Orders"
 )
+
 admin.add_view(
     model=MongoAsyncModel("skus", db.skus),
     title="SKUs"
 )
+
 admin.add_view(
     model=MongoAsyncModel("supplements", db.supplements),
     title="Supplements"
 )
 
-# Mount at /admin
+# mount admin dashboard
 app.mount("/admin", admin.app)
-
-# Mount admin dashboard at /admin
-app.mount("/admin", admin_app)
-# Tell admin about your data models
-admin_app.resources = [
-    AdminUser,
-    SKU,
-    Supplement,
-    Order,
-    RDAValues
-]
 
 app.add_middleware(
     CORSMiddleware,
