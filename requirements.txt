@@ -8,4 +8,3 @@ bcrypt
 PyJWT
 python-multipart
 crudadmin
-fastcrud
