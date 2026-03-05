@@ -1,0 +1,124 @@
+{
+  "identity": {
+    "name": "The Modern Miller",
+    "tone": "Premium, Organic, Scientific, Trustworthy",
+    "theme_mode": "light",
+    "design_principles": [
+      "Fusion over Imitation: Mix Heritage Bakery with Clinical Precision.",
+      "Content is King: The Nutrition Label is the hero—treat it like a legal document.",
+      "Negative Space: Use whitespace to signal luxury.",
+      "Contrast: Deep Brown text on Off-White backgrounds for maximum readability."
+    ]
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Playfair Display, serif",
+      "body": "Inter, sans-serif",
+      "data": "Space Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl font-bold tracking-tight",
+      "h2": "text-3xl font-semibold tracking-tight",
+      "h3": "text-2xl font-medium",
+      "body": "text-base leading-relaxed",
+      "label": "text-sm font-medium uppercase tracking-wider",
+      "data": "text-sm font-mono"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#5D4037",
+      "primary_foreground": "#FFFFFF",
+      "secondary": "#8A9A5B",
+      "secondary_foreground": "#FFFFFF",
+      "background": "#FAF9F6",
+      "surface": "#FFFFFF",
+      "border": "#D7CCC8",
+      "muted": "#F5F5F5",
+      "muted_foreground": "#795548",
+      "accent": "#EFEBE9",
+      "destructive": "#D32F2F"
+    },
+    "usage": {
+      "body_bg": "bg-[#FAF9F6]",
+      "card_bg": "bg-white",
+      "text_main": "text-[#5D4037]",
+      "text_muted": "text-[#795548]",
+      "border_main": "border-[#D7CCC8]",
+      "action_btn": "bg-[#5D4037] hover:bg-[#4E342E] text-white",
+      "secondary_btn": "bg-[#8A9A5B] hover:bg-[#7B8B50] text-white"
+    }
+  },
+  "components": {
+    "buttons": {
+      "default": "rounded-md px-6 py-3 font-medium transition-all duration-200 active:scale-95 shadow-sm hover:shadow-md",
+      "primary": "bg-[#5D4037] text-white hover:bg-[#4E342E]",
+      "outline": "border-2 border-[#5D4037] text-[#5D4037] hover:bg-[#5D4037] hover:text-white bg-transparent"
+    },
+    "inputs": {
+      "default": "rounded-md border-[#D7CCC8] bg-white px-4 py-3 text-[#5D4037] placeholder:text-[#A1887F] focus:border-[#5D4037] focus:ring-1 focus:ring-[#5D4037] transition-all"
+    },
+    "cards": {
+      "default": "rounded-xl border border-[#D7CCC8]/50 bg-white shadow-sm hover:shadow-md transition-shadow p-6",
+      "float": "rounded-xl border-none bg-white/90 backdrop-blur-md shadow-xl p-8"
+    },
+    "nutrition_label": {
+      "container": "border-2 border-black bg-white p-4 font-sans text-black max-w-md mx-auto print:border-2 print:border-black",
+      "header": "border-b-8 border-black pb-2 mb-2",
+      "title": "font-black text-3xl leading-none",
+      "row": "flex justify-between border-b border-black py-1",
+      "row_bold": "flex justify-between border-b-4 border-black py-1 font-bold"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "container_padding": "p-4 md:p-8 lg:p-12",
+      "section_gap": "gap-8 md:gap-12"
+    },
+    "grid": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6",
+      "form": "grid grid-cols-1 gap-6"
+    }
+  },
+  "motion": {
+    "transitions": "transition-all duration-300 ease-in-out",
+    "hover_lift": "hover:-translate-y-1 hover:shadow-lg",
+    "fade_in": "animate-in fade-in duration-500 slide-in-from-bottom-4"
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "hero_background",
+        "url": "https://images.unsplash.com/photo-1692230335051-8cbb6a8c8a0e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHw0fHx3aGVhdCUyMGZpZWxkJTIwZ29sZGVuJTIwaG91cnxlbnwwfHx8fDE3NzI2Mzg5MjV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Golden wheat field - use with overlay for landing page bg"
+      },
+      {
+        "category": "flour_texture",
+        "url": "https://images.unsplash.com/photo-1710857389305-5cba9211033f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHw0fHxmbG91ciUyMHBvd2RlciUyMHRleHR1cmV8ZW58MHx8fHwxNzcyNjM4OTM1fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Powdered texture - use for subtle section backgrounds"
+      },
+      {
+        "category": "ingredients",
+        "url": "https://images.unsplash.com/photo-1723879682969-a9364967b20f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwyfHxoZWFsdGh5JTIwZ3JhaW5zJTIwYW5kJTIwc2VlZHMlMjBzcG9vbnxlbnwwfHx8fDE3NzI2Mzg5MzZ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Spoons with grains - use for ingredients/supplements section"
+      }
+    ],
+    "icons": "Use lucide-react (Wheat, Leaf, Scale, Calculator, FileText, User, Settings, LogOut)"
+  },
+  "instructions_to_main_agent": [
+    "1. Setup: Install 'lucide-react', 'clsx', 'tailwind-merge' if missing.",
+    "2. Theme: Force LIGHT mode in tailwind config. Dark mode is not for this brand.",
+    "3. Frontend: Implement the 'Customer Lookup' as the index page. Use the wheat field image as a full-screen background with a heavy dark overlay (bg-black/40) so the white card pops.",
+    "4. Nutrition Label: This MUST be a separate component. Use standard FSSAI formatting (Energy, Protein, Carbs, Sugar, Fat). Make it look like a physical sticker.",
+    "5. Admin: Create a 'DashboardLayout' with a sidebar. Use the 'ingredients' image as a subtle header background in the admin area.",
+    "6. Print: Add '@media print' styles to the Nutrition Label component so it prints cleanly on a 4x6 or A4 sheet (hide buttons/nav).",
+    "7. Data: Mock the backend calls for now, but structure the data exactly as the nutrition label needs it."
+  ],
+  "universal_guidelines": [
+    "Use 'sonner' for toasts.",
+    "All interactive elements must have 'data-testid'.",
+    "Do not use gradients for text.",
+    "Use 'Inter' for UI text and 'Playfair Display' for Headings.",
+    "Ensure high contrast for accessibility (WCAG AA)."
+  ]
+}
